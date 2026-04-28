@@ -1,0 +1,15 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#090B10"/>
+  <ellipse cx="267" cy="174" rx="254" ry="254" fill="#FF4D36" fill-opacity="0.14"/>
+  <ellipse cx="1336" cy="163" rx="220" ry="220" fill="#3DC8FF" fill-opacity="0.12"/>
+  <rect x="98" y="86" width="1404" height="728" rx="32" fill="url(#paint0_linear)" stroke="rgba(255,255,255,0.08)"/>
+  <path d="M704 334.876C704 320.44 719.625 311.418 732.125 318.672L924.763 430.467C937.108 437.631 937.108 455.457 924.763 462.621L732.125 574.416C719.625 581.67 704 572.648 704 558.212V334.876Z" fill="#FF4D36"/>
+  <text x="800" y="674" fill="#F6F8FB" font-family="Arial, sans-serif" font-size="72" font-weight="700" text-anchor="middle">CineStream</text>
+  <text x="800" y="738" fill="#8E9BB0" font-family="Arial, sans-serif" font-size="28" text-anchor="middle">Backdrop unavailable</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="175" y1="124" x2="1406" y2="771" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#131A24"/>
+      <stop offset="1" stop-color="#0C1017"/>
+    </linearGradient>
+  </defs>
+</svg>

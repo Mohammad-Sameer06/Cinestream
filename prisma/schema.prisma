@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+model User {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  name           String
+  username       String    @unique
+  email          String    @unique
+  hashedPassword String
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  profiles       Profile[]
+}
+
+model Profile {
+  id               String             @id @default(auto()) @map("_id") @db.ObjectId
+  name             String
+  avatarIndex      Int                @default(0)
+  userId           String             @db.ObjectId
+  user             User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  watchlist        WatchlistItem[]
+  continueWatching ContinueWatching[]
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+}
+
+model WatchlistItem {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  tmdbId    Int
+  mediaType String   // "movie" or "tv"
+  title     String
+  poster    String?
+  profileId String   @db.ObjectId
+  profile   Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  addedAt   DateTime @default(now())
+
+  @@unique([profileId, tmdbId, mediaType])
+}
+
+model ContinueWatching {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  tmdbId    Int
+  mediaType String   // "movie" or "tv"
+  title     String
+  poster    String?
+  progress  Int      @default(0) // seconds watched
+  duration  Int      @default(0) // total duration in seconds
+  season    Int?     // for TV shows
+  episode   Int?     // for TV shows
+  profileId String   @db.ObjectId
+  profile   Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  updatedAt DateTime @updatedAt
+
+  @@unique([profileId, tmdbId, mediaType])
+}

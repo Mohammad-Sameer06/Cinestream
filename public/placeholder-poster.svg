@@ -1,0 +1,14 @@
+<svg width="800" height="1200" viewBox="0 0 800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1200" fill="#0B1118"/>
+  <rect x="48" y="48" width="704" height="1104" rx="36" fill="url(#paint0_linear)"/>
+  <path d="M256 380C256 344.654 284.654 316 320 316H480C515.346 316 544 344.654 544 380V540C544 575.346 515.346 604 480 604H320C284.654 604 256 575.346 256 540V380Z" fill="rgba(255,255,255,0.06)"/>
+  <path d="M364 392.981C364 384.957 372.68 379.944 379.625 383.99L466.089 434.359C472.934 438.346 472.934 448.223 466.089 452.21L379.625 502.579C372.68 506.625 364 501.612 364 493.588V392.981Z" fill="#FF4D36"/>
+  <text x="400" y="710" fill="#F6F8FB" font-family="Arial, sans-serif" font-size="54" font-weight="700" text-anchor="middle">CineStream</text>
+  <text x="400" y="770" fill="#8E9BB0" font-family="Arial, sans-serif" font-size="24" text-anchor="middle">Title artwork unavailable</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="104" y1="118" x2="705" y2="1062" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#151C26"/>
+      <stop offset="1" stop-color="#0D131B"/>
+    </linearGradient>
+  </defs>
+</svg>

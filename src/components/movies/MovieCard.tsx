@@ -17,19 +17,26 @@ import axios from "axios";
 import { toast } from "sonner";
 
 import { getBackdropUrl, getPosterUrl, getYear } from "@/lib/tmdb";
-import { MediaType, TMDBMedia, TMDBMovie } from "@/types";
+import { MediaType } from "@/types";
 import { useProfileStore } from "@/store/profileStore";
 import { useWatchlistStore } from "@/store/watchlistStore";
 
+interface MovieCardItem {
+  id: number;
+  title?: string;
+  name?: string;
+  poster_path: string | null;
+  backdrop_path: string | null;
+  release_date?: string;
+  first_air_date?: string;
+  vote_average?: number;
+}
+
 interface MovieCardProps {
-  item: TMDBMedia;
+  item: MovieCardItem;
   mediaType: MediaType;
   cardWidth?: number;
   hoverDirection?: "up" | "down";
-}
-
-function isMovie(item: TMDBMedia): item is TMDBMovie {
-  return "title" in item;
 }
 
 export default function MovieCard({
@@ -50,8 +57,8 @@ export default function MovieCard({
   const [hoverRect, setHoverRect] = useState<DOMRect | null>(null);
   const [watchlistLoading, setWatchlistLoading] = useState(false);
 
-  const title = isMovie(item) ? item.title : item.name;
-  const year = isMovie(item)
+  const title = mediaType === "movie" ? item.title ?? item.name : item.name ?? item.title;
+  const year = mediaType === "movie"
     ? getYear(item.release_date)
     : getYear(item.first_air_date);
   const poster = getPosterUrl(item.poster_path, "w500");

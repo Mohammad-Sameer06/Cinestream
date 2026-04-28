@@ -327,7 +327,7 @@ export default function Navbar() {
                             >
                               <div className="relative h-12 w-8 shrink-0 overflow-hidden rounded-sm bg-white/10">
                                 <img
-                                  src={getPosterUrl(item.poster_path, "w92")}
+                                  src={getPosterUrl(item.poster_path, "w185")}
                                   alt={title || "Poster"}
                                   className="h-full w-full object-cover"
                                 />

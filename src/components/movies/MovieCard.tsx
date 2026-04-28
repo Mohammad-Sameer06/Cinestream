@@ -57,7 +57,9 @@ export default function MovieCard({
   const [hoverRect, setHoverRect] = useState<DOMRect | null>(null);
   const [watchlistLoading, setWatchlistLoading] = useState(false);
 
-  const title = mediaType === "movie" ? item.title ?? item.name : item.name ?? item.title;
+  const title = mediaType === "movie"
+    ? item.title ?? item.name ?? "Untitled"
+    : item.name ?? item.title ?? "Untitled";
   const year = mediaType === "movie"
     ? getYear(item.release_date)
     : getYear(item.first_air_date);

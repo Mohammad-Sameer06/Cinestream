@@ -6,7 +6,6 @@ import axios from "axios";
 import { toast } from "sonner";
 
 import { useProfileStore } from "@/store/profileStore";
-import { TMDBMedia } from "@/types";
 import MovieCard from "./MovieCard";
 
 interface ContinueWatchingItem {
@@ -142,7 +141,7 @@ export default function ContinueWatchingRow() {
         style={{ scrollSnapType: "x mandatory" }}
       >
         {items.map((item) => {
-          const mappedMedia: TMDBMedia = {
+          const mappedMedia = {
             id: item.tmdbId,
             title: item.title,
             name: item.title,

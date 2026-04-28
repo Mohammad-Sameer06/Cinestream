@@ -407,7 +407,7 @@ export default function Navbar() {
                             >
                               <div className="relative aspect-video w-24 shrink-0 overflow-hidden rounded-lg bg-white/10">
                                 <img
-                                  src={getPosterUrl(item.backdrop_path || item.poster_path, "w300")}
+                                  src={getPosterUrl(item.backdrop_path || item.poster_path, "w342")}
                                   alt={title || "Backdrop"}
                                   className="h-full w-full object-cover"
                                 />

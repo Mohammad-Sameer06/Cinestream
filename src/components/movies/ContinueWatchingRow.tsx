@@ -144,8 +144,8 @@ export default function ContinueWatchingRow() {
         {items.map((item) => {
           const mappedMedia: TMDBMedia = {
             id: item.tmdbId,
-            title: item.mediaType === "movie" ? item.title : undefined,
-            name: item.mediaType === "tv" ? item.title : undefined,
+            title: item.title,
+            name: item.title,
             poster_path: item.poster,
             backdrop_path: item.poster,
             overview: item.mediaType === "tv" ? `Season ${item.season} Episode ${item.episode}` : "",
